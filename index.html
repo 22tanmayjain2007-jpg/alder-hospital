@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alder Hospital | Care for you and your family</title>
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google font: change or remove if desired -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#29302e;--muted:#777b77;--paper:#fbfaf7;--sand:#e9e6de;--line:#e9e6df;--white:#fff;--radius:8px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;font-size:14px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+a:hover{color:#66736b}
+img{display:block;max-width:100%}
+.topline{background:#e8e5de;font-size:10px;padding:7px 0;color:#555}
+.navbar{background:rgba(251,250,247,.97);border-bottom:1px solid rgba(0,0,0,.025);padding:14px 0;position:sticky;top:0;z-index:1000}
+.brand{display:flex;gap:9px;align-items:center;font-size:17px;font-weight:700;line-height:1.1}
+.brand-mark{width:29px;height:29px;border:1.4px solid var(--ink);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:400}
+.brand small{display:block;font-size:7px;font-weight:500;letter-spacing:.06em;margin-top:4px}
+.nav-link{font-size:12px;color:#3f4542!important;padding:10px 13px!important}
+.btn-dark-custom{background:var(--ink);border:1px solid var(--ink);color:white;border-radius:4px;padding:12px 16px;font-size:12px;display:inline-flex;align-items:center;gap:12px;justify-content:center;transition:.2s}
+.btn-dark-custom:hover{background:#404a45;color:white}
+.btn-outline-custom{background:transparent;border:1px solid var(--ink);color:var(--ink);border-radius:4px;padding:11px 16px;font-size:12px}
+.btn-outline-custom:hover{background:var(--ink);color:white}
+.section{padding:64px 0}
+.section-label{font-size:9px;text-transform:uppercase;letter-spacing:.045em;font-weight:700;margin-bottom:13px}
+h1,h2,h3,h4,p{margin-top:0}
+h1{font-size:clamp(34px,4.2vw,54px);letter-spacing:-.045em;line-height:1.05;font-weight:500;margin-bottom:20px}
+h2{font-size:clamp(25px,3vw,34px);letter-spacing:-.035em;line-height:1.18;font-weight:500;margin-bottom:16px}
+h3{font-size:17px;letter-spacing:-.02em;font-weight:600}
+.lead-copy{font-size:14px;color:var(--muted);max-width:470px}
+.small-muted{color:var(--muted);font-size:12px}
+.hero{padding:35px 0 38px}
+.hero-image{width:100%;height:205px;object-fit:cover;background:#e3e0d8;border-radius:6px;margin-top:24px}
+.image-placeholder{background:#e4e1d9;overflow:hidden;position:relative}
+.image-placeholder img{width:100%;height:100%;object-fit:cover}
+.image-placeholder:not(:has(img[src]:not([src=""])))::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(100,100,90,.05));pointer-events:none}
+.feature-points{display:flex;gap:22px;flex-wrap:wrap;margin-top:15px;font-size:11px}
+.feature-points i{margin-right:5px}
+.form-panel{background:var(--sand);padding:24px;border-radius:7px}
+.form-panel h3{font-size:22px;font-weight:500;margin-bottom:8px}
+.form-label{font-size:11px;font-weight:600;margin-bottom:5px}
+.form-control,.form-select{border-color:#e7e4dd;border-radius:4px;font-size:12px;min-height:39px;background-color:#fff;color:var(--ink);padding:10px 12px}
+.form-control:focus,.form-select:focus{border-color:#77837c;box-shadow:0 0 0 .15rem rgba(41,48,46,.1)}
+textarea.form-control{min-height:110px}
+.form-check-input:checked{background-color:var(--ink);border-color:var(--ink)}
+.form-check-label{font-size:10px;color:#555}
+.form-note{text-align:center;font-size:10px;color:var(--muted);margin:15px 0 0}
+.intro-section{border-top:1px solid var(--line)}
+.intro-image{height:330px;width:100%;object-fit:cover;border-radius:6px;background:#e4e1d9}
+.info-pair{display:flex;gap:12px;margin-top:24px;font-size:12px}
+.info-pair .bi{font-size:17px}
+.sand-section{background:var(--sand)}
+.section-heading-row{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:25px}
+.facility-card{height:100%;background:var(--paper);border-radius:7px;overflow:hidden}
+.facility-img{height:160px;width:100%;object-fit:cover;background:#dcd9d1}
+.facility-body{padding:17px}
+.facility-body h3{font-size:15px;margin-bottom:8px}
+.facility-body p{font-size:11px;color:var(--muted);margin-bottom:13px}
+.card-meta{font-size:10px;border-top:1px solid var(--line);padding-top:10px;color:#6c706d}
+.access-note{text-align:center;font-size:11px;margin:22px 0 0}
+.department-card{height:100%;background:var(--sand);padding:18px;border-radius:7px;transition:transform .2s}
+.department-card:hover{transform:translateY(-3px)}
+.dept-icon{display:inline-flex;background:var(--ink);color:#fff;width:31px;height:31px;border-radius:5px;align-items:center;justify-content:center;font-size:15px;margin-bottom:12px}
+.department-card h3{font-size:14px;margin-bottom:8px}
+.department-card p{font-size:11px;color:var(--muted);margin-bottom:12px}
+.text-link{font-size:11px;font-weight:600;display:inline-flex;gap:7px;align-items:center}
+.doctor-card{height:100%;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:var(--paper)}
+.doctor-img{height:155px;width:100%;object-fit:cover;background:#dedbd4}
+.doctor-body{padding:13px}
+.doctor-body h3{font-size:12px;margin-bottom:3px}
+.doctor-body p{font-size:10px;color:var(--muted);margin-bottom:7px}
+.doctor-meta{font-size:9px;color:#747873;margin-bottom:8px}
+.story-card{height:100%;border:1px solid var(--line);border-radius:7px;padding:20px}
+.stars{font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.story-quote{font-size:13px;line-height:1.65;min-height:90px}
+.story-person{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:10px}
+.avatar{width:28px;height:28px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:9px}
+.story-person span{display:block;color:var(--muted);font-size:9px}
+.disclaimer{text-align:center;color:#92948f;font-size:10px;margin:22px 0 0}
+.contact-section{background:var(--sand)}
+.contact-intro{text-align:center;max-width:530px;margin:0 auto 35px}
+.contact-card{background:var(--paper);padding:26px;border-radius:7px}
+.contact-card h3{font-size:17px;margin-bottom:16px}
+.contact-detail{display:flex;gap:13px;margin-bottom:20px}
+.contact-detail .icon-box{width:34px;height:34px;flex-shrink:0;border-radius:5px;background:var(--ink);color:white;display:flex;align-items:center;justify-content:center}
+.contact-detail h3{font-size:13px;margin:3px 0 6px}
+.contact-detail p{font-size:11px;color:var(--muted);margin:0}
+.emergency-box{background:var(--ink);color:white;border-radius:6px;padding:16px;font-size:11px}
+.emergency-box p{font-size:10px;color:#d2d5d2;margin:5px 0 0}
+.next-step{padding:55px 0}
+footer{border-top:1px solid var(--line);padding:24px 0}
+.footer-nav{display:flex;gap:22px;justify-content:flex-end;flex-wrap:wrap;font-size:11px}
+.footer-bottom{border-top:1px solid var(--line);padding-top:15px;margin-top:20px;font-size:10px;color:var(--muted);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+/* Confirmation modal */
+.modal-backdrop.show{opacity:.86;background:#171a19}
+.confirm-modal .modal-dialog{max-width:650px}
+.confirm-modal .modal-content{border:0;border-radius:16px;padding:30px 34px;background:var(--paper)}
+.confirm-head{display:flex;align-items:center;gap:16px}
+.confirm-check{width:58px;height:58px;flex-shrink:0;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:27px}
+.confirm-head h2{font-size:25px;font-weight:600;margin:0 0 2px}
+.confirm-head p{color:var(--muted);margin:0;font-size:15px}
+.confirm-divider{border:0;border-top:1px solid var(--line);margin:25px 0}
+.summary-box{background:var(--sand);border-radius:8px;padding:17px 20px;margin:16px 0 25px}
+.summary-title{font-size:11px;font-weight:700;color:#737873;margin-bottom:8px}
+.summary-row{display:flex;justify-content:space-between;gap:20px;font-size:14px;margin:5px 0}
+.summary-row span:first-child{color:var(--muted)}
+.confirm-foot{text-align:center;color:#969995;font-size:12px;margin:28px 0 0}
+@media(max-width:767px){
+ .section{padding:45px 0}.hero{padding-top:25px}.form-panel{margin-top:28px;padding:19px}
+ .hero-image{height:220px}.intro-image{height:250px;margin-bottom:25px}
+ .section-heading-row{display:block}.section-heading-row .small-muted{margin-top:10px}
+ .facility-img{height:180px}.doctor-img{height:180px}
+ .contact-card{padding:18px}.confirm-modal .modal-content{padding:22px 18px}
+ .confirm-head h2{font-size:21px}.confirm-check{width:46px;height:46px}
+ .summary-row{font-size:12px}.footer-nav{justify-content:flex-start;margin-top:18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topline">
+ <div class="container d-flex justify-content-between gap-3"><span>Thoughtful care for you and your family.</span><span>Medical emergency? Call your local emergency number.</span></div>
+</div>
+<nav class="navbar navbar-expand-lg">
+ <div class="container">
+  <a class="brand" href="#home" aria-label="Alder Hospital home"><span class="brand-mark">+</span><span>alder hospital<small>HERE FOR YOU. ALWAYS.</small></span></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="mainNav">
+   <ul class="navbar-nav ms-auto align-items-lg-center">
+    <li class="nav-item"><a class="nav-link" href="#about">Our hospital</a></li>
+    <li class="nav-item"><a class="nav-link" href="#facilities">Care &amp; facilities</a></li>
+    <li class="nav-item"><a class="nav-link" href="#stories">Patient stories</a></li>
+    <li class="nav-item ms-lg-2"><a class="btn-dark-custom" href="#appointment">Request an appointment <i class="bi bi-arrow-up-right"></i></a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="container">
+  <div class="row g-5 align-items-start">
+   <div class="col-lg-6 pt-lg-2">
+    <div class="section-label">Care that starts with listening</div>
+    <h1>Expert care.<br>A human touch.</h1>
+    <p class="lead-copy">From everyday health concerns to specialist treatment, we make your next step feel a little easier.</p>
+    <a class="text-link mt-1" href="#about">Get to know Alder <i class="bi bi-arrow-right"></i></a>
+    <!-- Paste your hero image URL into the empty src below -->
+    <img class="hero-image" src="images/hero.png" alt="Doctor talking with a patient">
+    <div class="feature-points"><span><i class="bi bi-check-circle"></i>Clear advice</span><span><i class="bi bi-check-circle"></i>Coordinated care</span><span><i class="bi bi-check-circle"></i>Support at every step</span></div>
+   </div>
+   <div class="col-lg-5 offset-lg-1" id="appointment">
+    <div class="form-panel">
+     <div class="section-label mb-1">Let's find your care</div>
+     <h3>Request an appointment</h3>
+     <p class="small-muted mb-3">Tell us a little about yourself. Our team will call to help arrange your visit.</p>
+     <form id="appointmentForm" novalidate>
+      <div class="mb-3"><label class="form-label" for="apptName">Full name *</label><input class="form-control" id="apptName" name="name" placeholder="Enter your full name" required></div>
+      <div class="row g-2">
+       <div class="col-sm-6 mb-2"><label class="form-label" for="apptPhone">Phone number *</label><input class="form-control" id="apptPhone" name="phone" type="tel" placeholder="Your phone number" required pattern="[0-9+() .-]{7,20}"></div>
+       <div class="col-sm-6 mb-2"><label class="form-label" for="apptEmail">Email address</label><input class="form-control" id="apptEmail" name="email" type="email" placeholder="you@example.com"></div>
+      </div>
+      <div class="mb-2"><label class="form-label" for="apptDepartment">How can we help? *</label><select class="form-select" id="apptDepartment" name="department" required><option value="">Choose a department</option><option>Cardiology</option><option>Orthopaedics</option><option>Neurology</option><option>Paediatrics</option><option>Ophthalmology</option><option>General Medicine</option><option>Imaging &amp; diagnostics</option><option>Recovery &amp; rehabilitation</option><option>Other</option></select></div>
+      <div class="row g-2">
+       <div class="col-sm-6 mb-2"><label class="form-label" for="apptDate">Preferred date</label><input class="form-control" id="apptDate" name="date" type="date"></div>
+       <div class="col-sm-6 mb-2"><label class="form-label" for="patientType">Patient type</label><select class="form-select" id="patientType" name="patientType"><option>New patient</option><option>Returning patient</option></select></div>
+      </div>
+      <div class="form-check my-2"><input class="form-check-input" id="apptConsent" type="checkbox" required><label class="form-check-label" for="apptConsent">I agree to be contacted about my appointment and have read the privacy notice.</label></div>
+      <div class="invalid-feedback d-block form-error" id="apptError" style="display:none!important">Please complete the required fields and consent.</div>
+      <button class="btn-dark-custom w-100 mt-2" type="submit">Send appointment request <i class="bi bi-arrow-up-right"></i></button>
+      <p class="form-note">This is a request, not a confirmed booking.<br>Please do not use this form for emergencies.</p>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section intro-section" id="about">
+ <div class="container"><div class="row align-items-center g-lg-5">
+  <div class="col-lg-5">
+   <!-- Paste your hospital interior image URL into the empty src below -->
+   <img class="intro-image" src="images/intro.png" alt="Alder Hospital welcoming interior">
+  </div>
+  <div class="col-lg-6 offset-lg-1">
+   <div class="section-label">Your neighbourhood hospital</div>
+   <h2>Good medicine begins<br class="d-none d-md-block"> with knowing you.</h2>
+   <p class="small-muted">At Alder, we believe feeling heard is part of feeling better. Our doctors, nurses and care teams work together to understand your needs and explain your options in plain language.</p>
+   <p class="small-muted">From your first conversation to your follow-up, you'll have a clear plan and a team you can turn to.</p>
+   <div class="row g-3">
+    <div class="col-sm-6"><div class="info-pair"><i class="bi bi-people"></i><div><strong>Care, together</strong><div class="small-muted mt-1">Connected specialist teams</div></div></div></div>
+    <div class="col-sm-6"><div class="info-pair"><i class="bi bi-universal-access"></i><div><strong>Everyone welcome</strong><div class="small-muted mt-1">Accessible spaces and support</div></div></div></div>
+   </div>
+  </div>
+ </div></div>
+</section>
+
+<section class="section sand-section" id="facilities">
+ <div class="container">
+  <div class="section-heading-row"><div><div class="section-label">Care &amp; facilities</div><h2 class="mb-0">The care you need.<br>The comfort you deserve.</h2></div><p class="small-muted mb-1" style="max-width:370px">From consultation to recovery, our facilities bring essential services together in a calm, easy-to-navigate setting.</p></div>
+  <div class="row g-3">
+   <div class="col-md-4"><article class="facility-card"><!-- Paste facility image URL into the empty src below --><img class="facility-img" src="images/Calm Sepia Hospital Room with Garden View.png" alt="Consultation room"><div class="facility-body"><h3>Consultation &amp; specialist care</h3><p>Comfortable, private rooms for everyday health needs and specialist consultations.</p><div class="card-meta">General medicine · Specialist clinics</div></div></article></div>
+   <div class="col-md-4"><article class="facility-card"><!-- Paste facility image URL into the empty src below --><img class="facility-img" src="images/Minimalist Scandinavian Clinic Interior (1).png" alt="Imaging and diagnostics suite"><div class="facility-body"><h3>Imaging &amp; diagnostics</h3><p>On-site imaging and laboratory services to help your care team find clear answers.</p><div class="card-meta">Imaging suite · Clinical laboratory</div></div></article></div>
+   <div class="col-md-4"><article class="facility-card"><!-- Paste facility image URL into the empty src below --><img class="facility-img" src="images/Modern CT Scanner Suite.png" alt="Recovery and rehabilitation room"><div class="facility-body"><h3>Recovery &amp; rehabilitation</h3><p>Thoughtfully designed spaces to rest, recover and regain confidence at your pace.</p><div class="card-meta">Inpatient rooms · Physiotherapy</div></div></article></div>
+  </div>
+  <p class="access-note"><i class="bi bi-universal-access me-2"></i>Step-free access, accessible toilets and a team ready to help. Tell us what you need when you book.</p>
+ </div>
+</section>
+
+<section class="section" id="departments">
+ <div class="container">
+  <div class="section-heading-row"><div><div class="section-label">Hospital departments</div><h2 class="mb-0">Find the right care.</h2></div><p class="small-muted mb-1">Specialist teams, one location.</p></div>
+  <div class="row g-3">
+   <div class="col-md-6 col-lg-4"><article class="department-card"><span class="dept-icon"><i class="bi bi-heart-pulse"></i></span><h3>Cardiology</h3><p>Heart health assessments, monitoring and specialist consultations for cardiovascular conditions.</p><a class="text-link book-dept" href="#appointment" data-department="Cardiology">Book a consultation <i class="bi bi-arrow-right"></i></a></article></div>
+   <div class="col-md-6 col-lg-4"><article class="department-card"><span class="dept-icon"><i class="bi bi-bandaid"></i></span><h3>Orthopaedics</h3><p>Bone, joint and muscle care including injury management, physiotherapy, referrals and surgical review.</p><a class="text-link book-dept" href="#appointment" data-department="Orthopaedics">Book a consultation <i class="bi bi-arrow-right"></i></a></article></div>
+   <div class="col-md-6 col-lg-4"><article class="department-card"><span class="dept-icon"><i class="bi bi-person-bounding-box"></i></span><h3>Neurology</h3><p>Specialist care for neurological conditions, headaches, memory concerns and nerve-related symptoms.</p><a class="text-link book-dept" href="#appointment" data-department="Neurology">Book a consultation <i class="bi bi-arrow-right"></i></a></article></div>
+   <div class="col-md-6 col-lg-4"><article class="department-card"><span class="dept-icon"><i class="bi bi-person-hearts"></i></span><h3>Paediatrics</h3><p>Child-centred care from infancy through adolescence. Routine check-ups, development and specialist referrals.</p><a class="text-link book-dept" href="#appointment" data-department="Paediatrics">Book a consultation <i class="bi bi-arrow-right"></i></a></article></div>
+   <div class="col-md-6 col-lg-4"><article class="department-card"><span class="dept-icon"><i class="bi bi-eye"></i></span><h3>Ophthalmology</h3><p>Comprehensive eye examinations, vision assessments and treatment for a range of eye conditions.</p><a class="text-link book-dept" href="#appointment" data-department="Ophthalmology">Book a consultation <i class="bi bi-arrow-right"></i></a></article></div>
+   <div class="col-md-6 col-lg-4"><article class="department-card"><span class="dept-icon"><i class="bi bi-heart-pulse-fill"></i></span><h3>General Medicine</h3><p>Everyday health, preventative care and ongoing condition management by experienced general practitioners.</p><a class="text-link book-dept" href="#appointment" data-department="General Medicine">Book a consultation <i class="bi bi-arrow-right"></i></a></article></div>
+  </div>
+ </div>
+</section>
+
+<section class="section intro-section" id="doctors">
+ <div class="container">
+  <div class="section-heading-row"><div><div class="section-label">Our medical team</div><h2 class="mb-0">Meet your doctors.</h2></div><a href="#contact" class="text-link">View all specialists <i class="bi bi-arrow-right"></i></a></div>
+  <div class="row g-3">
+   <div class="col-6 col-lg-3"><article class="doctor-card"><!-- Paste Dr. Hartley image URL into src --><img class="doctor-img" src="images/female doctor1.png" alt="Dr. Claire Hartley"><div class="doctor-body"><h3>Dr. Claire Hartley</h3><p>Consultant Cardiologist</p><div class="doctor-meta"><i class="bi bi-hospital"></i> 14 yrs experience &nbsp; <i class="bi bi-translate"></i> EN, FR</div><a class="text-link book-doctor" href="#appointment" data-department="Cardiology">Book appointment <i class="bi bi-arrow-right"></i></a></div></article></div>
+   <div class="col-6 col-lg-3"><article class="doctor-card"><!----><img class="doctor-img" src="images/male doctor 1.png" alt="Dr. Marcus Webb"><div class="doctor-body"><h3>Dr. Marcus Webb</h3><p>Orthopaedic Surgeon</p><div class="doctor-meta"><i class="bi bi-hospital"></i> 19 yrs experience &nbsp; <i class="bi bi-translate"></i> EN</div><a class="text-link book-doctor" href="#appointment" data-department="Orthopaedics">Book appointment <i class="bi bi-arrow-right"></i></a></div></article></div>
+   <div class="col-6 col-lg-3"><article class="doctor-card"><!----><img class="doctor-img" src="images/female doctor 2.png" alt="Dr. Priya Nair"><div class="doctor-body"><h3>Dr. Priya Nair</h3><p>Consultant Neurologist</p><div class="doctor-meta"><i class="bi bi-hospital"></i> 11 yrs experience &nbsp; <i class="bi bi-translate"></i> EN, HI, ML</div><a class="text-link book-doctor" href="#appointment" data-department="Neurology">Book appointment <i class="bi bi-arrow-right"></i></a></div></article></div>
+   <div class="col-6 col-lg-3"><article class="doctor-card"><!-- Paste Dr. Bell image URL into src --><img class="doctor-img" src="images/male doctor 2.png" alt="Dr. Thomas Bell"><div class="doctor-body"><h3>Dr. Thomas Bell</h3><p>Paediatric Specialist</p><div class="doctor-meta"><i class="bi bi-hospital"></i> 8 yrs experience &nbsp; <i class="bi bi-translate"></i> EN, DE</div><a class="text-link book-doctor" href="#appointment" data-department="Paediatrics">Book appointment <i class="bi bi-arrow-right"></i></a></div></article></div>
+  </div>
+ </div>
+</section>
+
+<section class="section intro-section" id="stories">
+ <div class="container">
+  <div class="section-heading-row"><div><div class="section-label">Patient stories</div><h2 class="mb-0">It's the little things that stay.</h2></div><p class="small-muted mb-1">Personal experiences. Thoughtful care.</p></div>
+  <div class="row g-3">
+   <div class="col-md-4"><article class="story-card"><div class="stars" aria-label="5 out of 5 stars">☆ ☆ ☆ ☆ ☆</div><p class="story-quote">“I never felt rushed. My doctor listened, explained the next steps clearly and made sure I felt comfortable before I left.”</p><div class="story-person"><div class="avatar">SM</div><div><strong>Sarah M.</strong><span>Outpatient care</span></div></div></article></div>
+   <div class="col-md-4"><article class="story-card"><div class="stars" aria-label="5 out of 5 stars">☆ ☆ ☆ ☆ ☆</div><p class="story-quote">“From reception to the nursing team, everyone was kind. Having my tests and consultation in one place made the day so much easier.”</p><div class="story-person"><div class="avatar">DR</div><div><strong>David R.</strong><span>Diagnostic services</span></div></div></article></div>
+   <div class="col-md-4"><article class="story-card"><div class="stars" aria-label="5 out of 5 stars">☆ ☆ ☆ ☆ ☆</div><p class="story-quote">“The team helped me understand my recovery, one step at a time. I felt supported, not just during my stay but afterwards too.”</p><div class="story-person"><div class="avatar">AP</div><div><strong>Anita P.</strong><span>Recovery &amp; rehabilitation</span></div></div></article></div>
+  </div>
+  <p class="disclaimer">Illustrative patient stories created for this fictional hospital. Not real patient testimonials.</p>
+ </div>
+</section>
+
+<section class="section contact-section" id="contact">
+ <div class="container">
+  <div class="contact-intro"><div class="section-label">Get in touch</div><h2>We're here to help.</h2><p class="small-muted">Have a question, need information about a service, or want to give feedback? Use the form below and our team will respond within one working day.</p></div>
+  <div class="row g-4 g-lg-5">
+   <div class="col-lg-8"><div class="contact-card"><h3>Send us a message</h3>
+    <form id="contactForm" novalidate>
+     <div class="row g-3">
+      <div class="col-sm-6"><label class="form-label" for="firstName">First name *</label><input class="form-control" id="firstName" name="firstName" placeholder="First name" required></div>
+      <div class="col-sm-6"><label class="form-label" for="lastName">Last name *</label><input class="form-control" id="lastName" name="lastName" placeholder="Last name" required></div>
+      <div class="col-12"><label class="form-label" for="contactEmail">Email address *</label><input class="form-control" id="contactEmail" name="email" type="email" placeholder="you@example.com" required></div>
+      <div class="col-12"><label class="form-label" for="contactPhone">Phone number</label><input class="form-control" id="contactPhone" name="phone" type="tel" placeholder="Your phone number"></div>
+      <div class="col-12"><label class="form-label" for="subject">Subject *</label><select class="form-select" id="subject" name="subject" required><option value="">Select a topic</option><option>Appointments and bookings</option><option>Departments and services</option><option>Billing and insurance</option><option>Feedback</option><option>Other enquiry</option></select></div>
+      <div class="col-12"><label class="form-label" for="message">Your message *</label><textarea class="form-control" id="message" name="message" placeholder="How can we help you today?" required></textarea></div>
+     </div>
+     <div class="d-flex align-items-center justify-content-between gap-3 mt-3 flex-wrap"><span class="small-muted" style="font-size:10px">* Required fields</span><button class="btn-dark-custom" type="submit">Send message <i class="bi bi-send"></i></button></div>
+     <div class="small-muted mt-2" id="contactFeedback" role="status" aria-live="polite"></div>
+    </form>
+   </div></div>
+   <div class="col-lg-4">
+    <div class="contact-detail"><div class="icon-box"><i class="bi bi-telephone"></i></div><div><h3>Call us</h3><p>+44 (0) 1234 567 890<br>Mon–Sat, 8:00 am – 6:00 pm</p></div></div>
+    <div class="contact-detail"><div class="icon-box"><i class="bi bi-envelope"></i></div><div><h3>Email us</h3><p>care@alderhospital.example<br>We aim to respond within one working day.</p></div></div>
+    <div class="contact-detail"><div class="icon-box"><i class="bi bi-geo-alt"></i></div><div><h3>Visit us</h3><p>24 Alder Lane, Brookfield<br>Main entrance on Alder Lane<br>Step-free access available</p></div></div>
+    <div class="emergency-box"><strong>Medical emergency?</strong><p>Do not use this form in an emergency. Please call your local emergency number immediately.</p></div>
+   </div>
+  </div>
+  <div class="next-step"><div class="row align-items-center g-4"><div class="col-lg-6"><div class="section-label">Your next step</div><h2>Let's take care of you.</h2><p class="small-muted">Not sure where to start? Request an appointment and our team will help you find the right care.</p><a class="btn-dark-custom mt-1" href="#appointment">Request an appointment <i class="bi bi-arrow-up-right"></i></a></div><div class="col-lg-5 offset-lg-1"><div class="contact-detail"><i class="bi bi-geo-alt fs-5"></i><div><strong>Alder Hospital</strong><p>24 Alder Lane, Brookfield<br>Main entrance on Alder Lane · Step-free access</p></div></div><div class="contact-detail"><i class="bi bi-clock fs-5"></i><div><strong>Appointments &amp; enquiries</strong><p>Monday–Saturday, 8:00 am–6:00 pm<br>care@alderhospital.example</p></div></div></div></div></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="row align-items-center"><div class="col-md-4"><a class="brand" href="#home"><span class="brand-mark">+</span><span>alder hospital<small>HERE FOR YOU. ALWAYS.</small></span></a></div><div class="col-md-8"><div class="footer-nav"><a href="#about">Our hospital</a><a href="#facilities">Care &amp; facilities</a><a href="#stories">Patient stories</a><a href="#contact">Privacy notice</a></div></div></div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Alder Hospital. A fictional hospital website concept.</span><span>For a medical emergency, call your local emergency number.</span></div>
+ </div>
+</footer>
+
+<!-- Appointment confirmation pop-up -->
+<div class="modal fade confirm-modal" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationTitle" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+  <div class="d-flex justify-content-between align-items-start gap-3">
+   <div class="confirm-head"><div class="confirm-check"><i class="bi bi-check-circle"></i></div><div><h2 id="confirmationTitle">Request received</h2><p>We'll be in touch shortly</p></div></div>
+   <button type="button" class="btn-close mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <hr class="confirm-divider">
+  <p class="fs-6 text-secondary mb-3">Thank you for contacting Alder Hospital. Our care team will review your request and call you within one working day to confirm your appointment.</p>
+  <div class="summary-box"><div class="summary-title">YOUR REQUEST SUMMARY</div>
+   <div class="summary-row"><span>Name</span><strong id="summaryName">—</strong></div>
+   <div class="summary-row"><span>Department</span><strong id="summaryDepartment">—</strong></div>
+   <div class="summary-row"><span>Preferred date</span><strong id="summaryDate">Not specified</strong></div>
+   <div class="summary-row"><span>Patient type</span><strong id="summaryPatientType">New patient</strong></div>
+  </div>
+  <div class="row g-3"><div class="col-sm-6"><button class="btn-dark-custom w-100 py-3" data-bs-dismiss="modal" type="button">Done</button></div><div class="col-sm-6"><button class="btn-outline-custom w-100 py-3" type="button" data-bs-dismiss="modal" id="viewContactDetails">View contact details</button></div></div>
+  <p class="confirm-foot">Not a confirmed booking. Do not use for emergencies.</p>
+ </div></div>
+</div>
+
+<!-- jQuery and Bootstrap bundle -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+$(function(){
+  $('#year').text(new Date().getFullYear());
+
+  // Never allow a preferred date in the past.
+  const today = new Date();
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+  $('#apptDate').attr('min', localToday);
+
+  // Department and doctor shortcuts preselect the correct service.
+  $('.book-dept, .book-doctor').on('click', function(){
+    const department = $(this).data('department');
+    $('#apptDepartment').val(department);
+    $('#appointment').find('input,select').first().trigger('focus');
+  });
+
+  function validForm($form){
+    let valid = true;
+    $form.find('[required]').each(function(){
+      const $field = $(this);
+      const isCheck = $field.is(':checkbox');
+      const valueOk = isCheck ? $field.is(':checked') : String($field.val() || '').trim() !== '';
+      const patternOk = !$field.attr('pattern') || new RegExp('^' + $field.attr('pattern') + '$').test(String($field.val() || '').trim());
+      const typeOk = !$field.is('[type="email"]') || !$field.val() || this.checkValidity();
+      const fieldOk = valueOk && patternOk && typeOk;
+      $field.toggleClass('is-invalid', !fieldOk).toggleClass('is-valid', fieldOk);
+      if(!fieldOk) valid = false;
+    });
+    $form.find('input[type="email"]').each(function(){
+      const $field=$(this);
+      if($field.val().trim() && !this.checkValidity()){
+        $field.addClass('is-invalid').removeClass('is-valid'); valid=false;
+      }
+    });
+    return valid;
+  }
+
+  $('#appointmentForm').on('submit', function(e){
+    e.preventDefault();
+    const $form=$(this);
+    if(!validForm($form)){
+      $('#apptError').attr('style','display:block!important').text('Please check the required fields, phone number, email and consent.');
+      const $firstInvalid=$form.find('.is-invalid').first();
+      if($firstInvalid.length) $firstInvalid.trigger('focus');
+      return;
+    }
+    $('#apptError').attr('style','display:none!important');
+    const name=$('#apptName').val().trim();
+    const date=$('#apptDate').val();
+    $('#summaryName').text(name || '—');
+    $('#summaryDepartment').text($('#apptDepartment').val() || '—');
+    $('#summaryDate').text(date ? date.split('-').reverse().join(' / ') : 'Not specified');
+    $('#summaryPatientType').text($('#patientType').val() || 'New patient');
+    bootstrap.Modal.getOrCreateInstance(document.getElementById('confirmationModal')).show();
+    // Demo behaviour only: no data is sent to a server.
+    $form[0].reset();
+    $form.find('.is-valid,.is-invalid').removeClass('is-valid is-invalid');
+  });
+
+  $('#contactForm').on('submit', function(e){
+    e.preventDefault();
+    const $form=$(this);
+    if(!validForm($form)){
+      $('#contactFeedback').text('Please complete all required fields and check your email address.');
+      $form.find('.is-invalid').first().trigger('focus');
+      return;
+    }
+    $('#contactFeedback').text('Thank you. Your message has been prepared in this demo; connect a backend or email service to deliver it.');
+    $form[0].reset();
+    $form.find('.is-valid,.is-invalid').removeClass('is-valid is-invalid');
+  });
+
+  // Clear validation feedback while the visitor edits a field.
+  $('input,select,textarea').on('input change', function(){
+    $(this).removeClass('is-invalid');
+    if($(this).is(':checkbox') && $(this).is(':checked')) $(this).addClass('is-valid');
+  });
+
+  $('#viewContactDetails').on('click', function(){
+    window.setTimeout(function(){ document.querySelector('#contact').scrollIntoView({behavior:'smooth'}); }, 250);
+  });
+
+  // Close mobile menu after a navigation choice.
+  $('.navbar-nav .nav-link, .navbar-nav .btn-dark-custom').on('click', function(){
+    const nav=document.getElementById('mainNav');
+    if(nav && nav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(nav).hide();
+  });
+});
+</script>
+</body>
+</html>
